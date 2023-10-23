@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <h1>
+          Hi, <%= name%>
+        </h1>
+        <p style="font-size: 20px;">We missed you.</p>
+        <form action="/logout?_method=DELETE" method="POST">
+          <button class="is-outlined" type="submit">Logout</button>
+        </form>
+      </div>
+      <div class="column avocado-col">
+        <figure class="image">
+          <img src="/images/greeting_avocado.png" alt="">
+        </figure>
+      </div>
+    </div>
+  </div>
+</body>
+
+<style scoped>
+  .columns {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .column {
+    flex: 1;
+  }
+
+  .avocado-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .image>img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 700px) {
+    .columns {
+      flex-direction: column;
+    }
+  }
+</style>
+
+</html>
