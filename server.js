@@ -63,7 +63,6 @@ app.post('/register', checkNotAuthenticated, async (req, res) => {
   } catch (error) {
     res.redirect('/register')
   }
-  console.log(users)
 })
 
 app.delete('/logout', (req, res, next) => {
